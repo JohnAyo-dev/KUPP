@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#08080d" />
+<title>KUPP — Connect. Chat. Gift.</title>
+<meta name="description" content="KUPP is the real-time platform where creators, models, and clients connect through live chat, audio calls, and meaningful exchanges. Live across Africa." />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>  :root{
+    --radius:20px;
+    --maxw:1160px;
+    --ease:cubic-bezier(.22,1,.36,1);
+
+    /* ---- Kupp (black & purple) — default ---- */
+    --bg:#08080d; --bg-rgb:8,8,13;
+    --surface:#111119; --surface-rgb:17,17,25;
+    --surface-2:#171722; --surface-2-rgb:23,23,34;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.16);
+    --text:#f6f6fa;
+    --text-soft:#d9d9e4;
+    --muted:#9b9bb0;
+    --accent:#8b5cf6; --accent-rgb:139,92,246;
+    --accent-2:#ec4899; --accent-2-rgb:236,72,153;
+    --accent-soft:rgba(139,92,246,.14);
+    --btn-text:#fff;
+    --hover:rgba(255,255,255,.05);
+    --nav-bg:linear-gradient(180deg,rgba(30,26,48,.72),rgba(16,14,26,.66));
+    --fx1:139,92,246; --fx2:236,72,153; --fx3:99,102,241; --fx4:168,85,247; --fx5:217,70,239;
+    --blob-op:.5; --streak-op:.3; --glow-op:.5;
+    color-scheme:dark;
+  }
+
+  /* ================= Light ================= */
+  :root[data-theme="light"]{
+    --bg:#f5f5fa; --bg-rgb:245,245,250;
+    --surface:#ffffff; --surface-rgb:255,255,255;
+    --surface-2:#ebedf3; --surface-2-rgb:235,237,243;
+    --line:rgba(10,12,26,.09);
+    --line-strong:rgba(10,12,26,.18);
+    --text:#101018;
+    --text-soft:#2c2c3a;
+    --muted:#5e5e74;
+    --accent:#7c3aed; --accent-rgb:124,58,237;
+    --accent-2:#db2777; --accent-2-rgb:219,39,119;
+    --accent-soft:rgba(124,58,237,.12);
+    --btn-text:#fff;
+    --hover:rgba(10,12,26,.05);
+    --nav-bg:linear-gradient(180deg,rgba(255,255,255,.88),rgba(245,245,250,.8));
+    --blob-op:.32; --streak-op:.34; --glow-op:.28;
+    color-scheme:light;
+  }
+
+  /* ================= Dark (neutral slate) ================= */
+  :root[data-theme="dark"]{
+    --bg:#0b0c0f; --bg-rgb:11,12,15;
+    --surface:#131418; --surface-rgb:19,20,24;
+    --surface-2:#1b1d22; --surface-2-rgb:27,29,34;
+    --line:rgba(255,255,255,.07);
+    --line-strong:rgba(255,255,255,.15);
+    --text:#eceef2;
+    --text-soft:#cfd2d9;
+    --muted:#969aa5;
+    --accent:#e2e5eb; --accent-rgb:226,229,235;
+    --accent-2:#9aa1ae; --accent-2-rgb:154,161,174;
+    --accent-soft:rgba(226,229,235,.12);
+    --btn-text:#0b0c0f;
+    --hover:rgba(255,255,255,.05);
+    --nav-bg:linear-gradient(180deg,rgba(24,26,31,.82),rgba(12,13,16,.74));
+    --fx1:148,163,184; --fx2:100,116,139; --fx3:71,85,105; --fx4:148,163,184; --fx5:51,65,85;
+    --blob-op:.38; --streak-op:.26; --glow-op:.34;
+    color-scheme:dark;
+  }
+
+  /* ================= Alté (white & cyan) ================= */
+  :root[data-theme="alte"]{
+    --bg:#f7feff; --bg-rgb:247,254,255;
+    --surface:#ffffff; --surface-rgb:255,255,255;
+    --surface-2:#ebfaff; --surface-2-rgb:235,250,255;
+    --line:rgba(3,45,58,.10);
+    --line-strong:rgba(3,45,58,.2);
+    --text:#06242d;
+    --text-soft:#17414d;
+    --muted:#4f7580;
+    --accent:#0891b2; --accent-rgb:8,145,178;
+    --accent-2:#22d3ee; --accent-2-rgb:34,211,238;
+    --accent-soft:rgba(8,145,178,.12);
+    --btn-text:#03242e;
+    --hover:rgba(3,45,58,.05);
+    --nav-bg:linear-gradient(180deg,rgba(255,255,255,.9),rgba(247,254,255,.82));
+    --fx1:6,182,212; --fx2:34,211,238; --fx3:8,145,178; --fx4:45,212,191; --fx5:14,165,233;
+    --blob-op:.3; --streak-op:.34; --glow-op:.26;
+    color-scheme:light;
+  }
+
+  /* ================= Kupp Gold (black & gold) ================= */
+  :root[data-theme="gold"]{
+    --bg:#050506; --bg-rgb:5,5,6;
+    --surface:#0f0f11; --surface-rgb:15,15,17;
+    --surface-2:#17171a; --surface-2-rgb:23,23,26;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.17);
+    --text:#f7f4ea;
+    --text-soft:#e2ddcc;
+    --muted:#a8a293;
+    --accent:#d4af37; --accent-rgb:212,175,55;
+    --accent-2:#f5d76e; --accent-2-rgb:245,215,110;
+    --accent-soft:rgba(212,175,55,.14);
+    --btn-text:#0a0906;
+    --hover:rgba(255,255,255,.05);
+    --nav-bg:linear-gradient(180deg,rgba(28,25,16,.8),rgba(12,11,8,.72));
+    --fx1:212,175,55; --fx2:245,215,110; --fx3:184,134,11; --fx4:212,175,55; --fx5:238,190,70;
+    --blob-op:.4; --streak-op:.3; --glow-op:.4;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.6;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ::selection{background:var(--accent);color:var(--btn-text)}
+  .wrap{width:min(100% - 44px,var(--maxw));margin-inline:auto}
+  h1,h2,h3,.display{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent)}
+  .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .section{padding:clamp(72px,10vw,132px) 0;position:relative;content-visibility:auto;contain-intrinsic-size:auto 1000px}
+  .section:target{content-visibility:visible}
+
+  /* ---------- background fx ---------- */
+  .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict}
+  header,main,footer{position:relative;z-index:1}
+  .blob{
+    display:block;position:absolute;border-radius:50%;opacity:var(--blob-op);
+    transform:translateZ(0);will-change:transform;
+  }
+  .blob.b1{width:64vw;height:64vw;background:radial-gradient(circle,rgba(var(--fx1),.95),rgba(var(--fx1),0) 66%);top:-18%;left:-16%;animation:drift1 26s ease-in-out infinite alternate}
+  .blob.b2{width:58vw;height:58vw;background:radial-gradient(circle,rgba(var(--fx2),.85),rgba(var(--fx2),0) 66%);top:14%;right:-18%;opacity:calc(var(--blob-op) * .8);animation:drift2 34s ease-in-out infinite alternate}
+  .blob.b3{width:54vw;height:54vw;background:radial-gradient(circle,rgba(var(--fx3),.9),rgba(var(--fx3),0) 66%);bottom:-18%;left:10%;opacity:calc(var(--blob-op) * .84);animation:drift3 30s ease-in-out infinite alternate}
+  .blob.b4{width:44vw;height:44vw;background:radial-gradient(circle,rgba(var(--fx4),.85),rgba(var(--fx4),0) 66%);top:52%;left:38%;opacity:calc(var(--blob-op) * .68);animation:drift1 40s ease-in-out infinite alternate-reverse}
+  .blob.b5{width:40vw;height:40vw;background:radial-gradient(circle,rgba(var(--fx5),.8),rgba(var(--fx5),0) 66%);top:70%;right:2%;opacity:calc(var(--blob-op) * .64);animation:drift2 24s ease-in-out infinite alternate}
+  @keyframes drift1{to{transform:translate3d(14vw,10vh,0) scale(1.18)}}
+  @keyframes drift2{to{transform:translate3d(-12vw,14vh,0) scale(1.22)}}
+  @keyframes drift3{to{transform:translate3d(10vw,-12vh,0) scale(1.12)}}
+
+  .streak{
+    display:block;position:absolute;height:2px;width:44vw;border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--accent),transparent);
+    opacity:var(--streak-op);transform:translate3d(0,0,0) rotate(var(--r,0deg));will-change:transform;
+  }
+  .streak.s1{--r:-18deg;top:16%;animation:sweep 9s linear infinite}
+  .streak.s2{--r:15deg;top:42%;animation:sweep 14s linear infinite 2s;background:linear-gradient(90deg,transparent,var(--accent-2),transparent)}
+  .streak.s3{--r:-10deg;top:66%;animation:sweep 11s linear infinite 4s}
+  .streak.s4{--r:22deg;top:86%;animation:sweep 17s linear infinite 1s;background:linear-gradient(90deg,transparent,rgb(var(--fx4)),transparent)}
+  @keyframes sweep{from{transform:translate3d(-46vw,0,0) rotate(var(--r,0deg))}to{transform:translate3d(150vw,0,0) rotate(var(--r,0deg))}}
+
+  /* pause all ambient motion when the tab is hidden or the marquee is off-screen */
+  .pause-anim .blob,.pause-anim .streak,.pause-anim .marquee .track{animation-play-state:paused!important}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:13px 22px;border-radius:999px;font-weight:600;font-size:.94rem;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+    white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(100deg,var(--accent),var(--accent-2));color:var(--btn-text);box-shadow:0 10px 34px -12px rgba(var(--accent-rgb),.9)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(var(--accent-2-rgb),.75)}
+  .btn-ghost{border:1px solid var(--line-strong);color:var(--text)}
+  .btn-ghost:hover{background:var(--hover);transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+
+  /* ---------- nav ---------- */
+  header{position:fixed;inset:0 0 auto;z-index:60;padding-top:16px;transition:padding .45s var(--ease)}
+  .nav{
+    position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    height:70px;padding:0 10px 0 20px;border-radius:999px;
+    background:transparent;border:1px solid transparent;
+    transition:height .45s var(--ease),width .5s var(--ease),padding .45s var(--ease),
+      background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease),
+      backdrop-filter .45s var(--ease),-webkit-backdrop-filter .45s var(--ease);
+  }
+  header.scrolled{padding-top:10px}
+  header.scrolled .nav{
+    width:min(100% - 44px,760px);height:58px;padding:0 8px 0 18px;
+    background:var(--nav-bg);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+    border-color:var(--line-strong);border-radius:999px;
+    box-shadow:0 18px 50px -18px rgba(0,0,0,.75),0 2px 10px -4px rgba(var(--accent-rgb),.4),inset 0 1px 0 rgba(255,255,255,.18);
+  }
+  .nav::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;
+    background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0) 46%);
+    transition:opacity .45s var(--ease);
+  }
+  header.scrolled .nav::after{opacity:1}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:1.28rem;letter-spacing:.02em}
+  .logo .dot{width:26px;height:26px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-size:.85rem;color:var(--btn-text)}
+  .nav-links{display:flex;gap:6px;font-size:.92rem;color:var(--muted)}
+  .nav-links a{padding:9px 15px;border-radius:999px;transition:color .25s,background .25s,box-shadow .25s}
+  .nav-links a:hover{color:var(--text);background:var(--hover)}
+  .nav-links a.active{color:var(--text);background:var(--accent-soft);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.4)}
+  .nav-cta{display:flex;align-items:center;gap:10px}
+  .nav-cta .login{padding:11px 18px;font-size:.9rem;color:var(--muted)}
+  .nav-cta .login:hover{color:var(--text)}
+  .nav-cta .btn{padding:11px 20px;font-size:.9rem}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line-strong);border-radius:12px;place-items:center}
+  .burger span{display:block;width:18px;height:2px;background:var(--text);box-shadow:0 6px 0 var(--text),0 -6px 0 var(--text);transition:.3s}
+  .mobile{display:none;border-top:1px solid var(--line);background:rgba(var(--bg-rgb),.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .mobile.open{display:block}
+  .mobile a{display:block;padding:16px 0;border-bottom:1px solid var(--line);color:var(--text)}
+  .mobile a.active{color:var(--accent)}
+  .mobile .btn{width:100%;margin:14px 0 26px}
+
+  /* ---------- theme toggle ---------- */
+  .theme-picker{position:relative}
+  .theme-btn{
+    width:42px;height:42px;border:1px solid var(--line-strong);border-radius:12px;
+    display:grid;place-items:center;color:var(--muted);
+    transition:color .25s,background .25s,border-color .25s,transform .25s var(--ease);
+  }
+  .theme-btn:hover{color:var(--text);background:var(--hover);border-color:var(--accent);transform:translateY(-2px)}
+  .theme-btn[aria-expanded="true"]{color:var(--text);border-color:var(--accent);background:var(--accent-soft)}
+  .theme-btn svg{width:19px;height:19px}
+  .theme-menu{
+    position:absolute;top:calc(100% + 12px);right:0;min-width:224px;
+    background:rgba(var(--bg-rgb),.94);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border:1px solid var(--line-strong);border-radius:16px;padding:7px;
+    box-shadow:0 26px 54px -22px rgba(0,0,0,.75);z-index:80;display:none;
+  }
+  .theme-menu.open{display:block}
+  .theme-opt{
+    display:flex;align-items:center;gap:11px;width:100%;padding:9px 11px;border-radius:11px;
+    color:var(--text);text-align:left;transition:background .2s,box-shadow .2s;
+  }
+  .theme-opt:hover{background:var(--hover)}
+  .theme-opt.active{background:var(--accent-soft);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.45)}
+  .theme-opt .sw{
+    flex:none;width:32px;height:17px;border-radius:999px;
+    box-shadow:inset 0 0 0 1px rgba(128,128,128,.4);
+  }
+  .sw-kupp{background:linear-gradient(135deg,#8b5cf6 0 50%,#ec4899 50% 78%,#08080d 78%)}
+  .sw-light{background:linear-gradient(135deg,#7c3aed 0 50%,#db2777 50% 78%,#f5f5fa 78%)}
+  .sw-dark{background:linear-gradient(135deg,#e2e5eb 0 50%,#9aa1ae 50% 78%,#0b0c0f 78%)}
+  .sw-alte{background:linear-gradient(135deg,#0891b2 0 50%,#22d3ee 50% 78%,#f7feff 78%)}
+  .sw-gold{background:linear-gradient(135deg,#d4af37 0 50%,#f5d76e 50% 78%,#050506 78%)}
+  .theme-opt .t{display:flex;flex-direction:column;line-height:1.25}
+  .theme-opt .t b{font-weight:600;font-size:.9rem}
+  .theme-opt .t em{font-style:normal;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-top:150px;overflow:hidden}
+  .glow{position:absolute;border-radius:50%;opacity:var(--glow-op);pointer-events:none;z-index:0}
+  .glow.a{width:640px;height:640px;background:radial-gradient(circle,rgba(var(--fx1),.9),rgba(var(--fx1),0) 68%);top:-190px;left:-170px}
+  .glow.b{width:560px;height:560px;background:radial-gradient(circle,rgba(var(--fx2),.8),rgba(var(--fx2),0) 68%);top:30px;right:-190px;opacity:calc(var(--glow-op) * .7)}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:10px;padding:7px 15px;border:1px solid var(--line-strong);border-radius:999px;font-size:.82rem;color:var(--muted)}
+  .pill .live{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  .hero h1{font-size:clamp(3.2rem,9vw,6.2rem);font-weight:700;margin:24px 0 22px;text-transform:uppercase}
+  .hero h1 span{display:block}
+  .hero p.lead{font-size:1.1rem;color:var(--muted);max-width:520px;margin-bottom:32px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .social{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .avatars{display:flex}
+  .avatars img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--bg);margin-left:-12px}
+  .avatars img:first-child{margin-left:0}
+  .social .rating{font-size:.88rem;color:var(--muted)}
+  .social .rating b{color:var(--text)}
+  .stars{color:#fbbf24;letter-spacing:2px;font-size:.85rem}
+
+  .hero-visual{position:relative}
+  .hero-shot{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 40px 90px -40px rgba(0,0,0,.9);background:var(--surface-2)}
+  .hero-shot img{width:100%;height:auto;object-fit:contain}
+  .hero-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(var(--bg-rgb),.85))}
+  .float-card{
+    position:absolute;background:rgba(var(--surface-rgb),.92);
+    border:1px solid var(--line-strong);border-radius:16px;padding:12px 15px;font-size:.82rem;
+    box-shadow:0 20px 40px -20px rgba(0,0,0,.9);will-change:transform
+  }
+  .float-card .t{color:var(--muted);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase}
+  .float-card .v{font-weight:600;font-size:1.02rem}
+  .fc-1{left:-26px;bottom:80px;animation:float 6s ease-in-out infinite}
+  .fc-2{right:-20px;top:56px;animation:float 6s ease-in-out infinite .8s}
+  .fc-3{left:26px;bottom:14px;animation:float 6s ease-in-out infinite 1.6s}
+  @keyframes float{50%{transform:translate3d(0,-12px,0)}}
+
+  /* ---------- marquee ---------- */
+  .marquee{contain:layout paint;border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding:16px 0}
+  .marquee .track{display:flex;gap:36px;width:max-content;transform:translateZ(0);animation:scroll 34s linear infinite}
+  .marquee span{font-family:"Space Grotesk";font-weight:600;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .marquee span b{color:var(--accent)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ---------- section head ---------- */
+  .head{max-width:720px;margin-bottom:56px}
+  .head h2{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:700;margin:18px 0 16px}
+  .head p{color:var(--muted);font-size:1.06rem}
+
+  /* ---------- features ---------- */
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .feature{
+    position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;overflow:hidden;transition:transform .4s var(--ease),border-color .3s;
+  }
+  .feature:hover{transform:translateY(-6px);border-color:var(--line-strong)}
+  .feature .thumb{height:170px;border-radius:14px;overflow:hidden;margin-bottom:24px;border:1px solid var(--line)}
+  .feature .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .feature:hover .thumb img{transform:scale(1.06)}
+  .feature .num{font-family:"Space Grotesk";font-size:.8rem;color:var(--accent);font-weight:600;letter-spacing:.14em}
+  .feature h3{font-size:1.35rem;margin:10px 0 10px}
+  .feature p{color:var(--muted);font-size:.96rem}
+  .feature .tag{display:inline-block;margin-top:18px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);padding:5px 11px;border-radius:999px}
+
+  /* ---------- split (safety) ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .split .media{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line-strong);background:var(--surface-2)}
+  .split .media img{width:100%;height:auto;object-fit:contain;display:block}
+  .media-badge{position:absolute;left:18px;bottom:18px;background:rgba(var(--bg-rgb),.82);backdrop-filter:blur(12px);border:1px solid var(--line-strong);border-radius:14px;padding:12px 16px}
+  .media-badge .v{font-family:"Space Grotesk";font-weight:700;font-size:1.5rem}
+  .media-badge .t{font-size:.74rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;margin:28px 0 34px}
+  .checks li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:.94rem;color:var(--text-soft)}
+  .checks .ico{flex:none;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:.7rem;margin-top:2px}
+
+  /* ---------- creators ---------- */
+  .creators{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .creator{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+  .creator img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .6s var(--ease)}
+  .creator:hover img{transform:scale(1.07)}
+  .creator::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(var(--bg-rgb),.92))}
+  .creator .info{position:absolute;inset:auto 0 0;padding:16px;z-index:1}
+  .creator .name{font-family:"Space Grotesk";font-weight:600}
+  .creator .role{font-size:.8rem;color:var(--muted)}
+  .creator .badge{position:absolute;top:12px;left:12px;z-index:1;background:rgba(var(--bg-rgb),.75);backdrop-filter:blur(8px);border:1px solid var(--line-strong);border-radius:999px;padding:5px 10px;font-size:.72rem;display:flex;gap:5px;align-items:center}
+  .creator .badge b{color:var(--accent)}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+
+  /* ---------- testimonials (deck slideshow) ---------- */
+  .quotes{
+    display:grid;grid-template-columns:minmax(0,1fr);justify-items:start;
+    width:min(100%,560px);perspective:1200px;
+  }
+  .quote{
+    grid-area:1/1;width:100%;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:18px;
+    cursor:pointer;z-index:1;
+    transform:translate(calc(var(--i,0) * 13px),calc(var(--i,0) * 12px)) rotate(calc(var(--i,0) * 1.4deg)) scale(.96);
+    transform-origin:left center;
+    filter:brightness(.62) saturate(.85);
+    box-shadow:0 24px 60px -34px rgba(0,0,0,.9);
+    transition:transform .7s var(--ease),filter .7s var(--ease),box-shadow .7s var(--ease),border-color .5s var(--ease);
+  }
+  .quote:nth-child(2){--i:1}
+  .quote:nth-child(3){--i:2}
+  .quote.is-active{
+    transform:translate(58px,-6px) rotate(0deg) scale(1);
+    filter:none;z-index:5;border-color:rgba(var(--accent-rgb),.5);
+    box-shadow:0 0 0 1px rgba(var(--accent-rgb),.35),0 44px 80px -34px rgba(var(--accent-rgb),.7);
+  }
+  .quote:focus-visible{outline:none;box-shadow:0 0 0 2px var(--accent),0 44px 80px -34px rgba(var(--accent-rgb),.7)}
+  .review-dots{display:flex;gap:9px;margin-top:30px}
+  .review-dots button{width:9px;height:9px;border-radius:999px;background:var(--line-strong);padding:0;transition:width .35s var(--ease),background .35s var(--ease)}
+  .review-dots button.on{width:28px;background:linear-gradient(100deg,var(--accent),var(--accent-2))}
+  .quote .mark{font-family:"Space Grotesk";font-size:3rem;line-height:.6;color:var(--accent)}
+  .quote p{font-size:1rem;color:var(--text-soft)}
+  .quote .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+  .quote .who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+  .quote .who .n{font-weight:600;font-size:.92rem}
+  .quote .who .r{font-size:.78rem;color:var(--muted)}
+
+  /* ---------- cta ---------- */
+  .cta-band{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line-strong);isolation:isolate}
+  .cta-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .cta-band::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(var(--bg-rgb),.96) 30%,rgba(var(--bg-rgb),.72));z-index:-1}
+  .cta-inner{padding:clamp(40px,7vw,76px);max-width:620px}
+  .cta-inner h2{font-size:clamp(2rem,4.6vw,3.1rem);margin:16px 0 18px}
+  .cta-inner p{color:var(--text-soft);margin-bottom:28px}
+  .cta-inner .hero-actions{margin-bottom:14px}
+  .cta-note{font-size:.84rem;color:var(--muted)}
+
+  /* ---------- contact ---------- */
+  .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+  .form{display:grid;gap:16px}
+  .field{display:grid;gap:8px}
+  .field label{font-size:.85rem;color:var(--muted)}
+  .field input,.field textarea{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:12px;
+    padding:13px 15px;color:var(--text);font:inherit;width:100%;transition:border-color .2s,box-shadow .2s;
+  }
+  .field textarea{resize:vertical;min-height:120px}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .contact-info{display:grid;gap:14px;align-content:start}
+  .info-row{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .info-row .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent);font-size:1.1rem}
+  .info-row .t{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .info-row .v{font-weight:600}
+  .info-row a:hover{color:var(--accent)}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);background:var(--surface);padding:72px 0 34px;margin-top:20px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px}
+  .foot-grid p{color:var(--muted);font-size:.94rem;max-width:320px;margin:16px 0 20px}
+  .foot h4{font-family:"Space Grotesk";font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .foot a{display:block;color:var(--text-soft);font-size:.94rem;padding:6px 0;transition:color .2s}
+  .foot a:hover{color:var(--accent)}
+  .socials{display:flex;gap:10px}
+  .socials a{width:40px;height:40px;border:1px solid var(--line-strong);border-radius:11px;display:grid;place-items:center;color:var(--muted);padding:0;transition:.25s}
+  .socials a:hover{color:var(--text);border-color:var(--accent);transform:translateY(-3px)}
+  .socials svg{width:17px;height:17px}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}
+  .status{display:inline-flex;align-items:center;gap:8px}
+  .status .dot{width:8px;height:8px;border-radius:50%;background:#22c55e}
+
+  /* ---------- content streaming ---------- */
+  .cs-item{contain:layout}
+  .cs-hide{clip-path:inset(0 0 100% 0);visibility:hidden}
+  .cs-in{visibility:visible;animation:csIn .6s cubic-bezier(.22,.61,.36,1) both;animation-delay:var(--d,0ms)}
+  @keyframes csIn{
+    from{clip-path:inset(0 0 100% 0);opacity:.2}
+    to{clip-path:inset(0 0 0 0);opacity:1}
+  }
+
+  /* ---------- cursor glow ---------- */
+  .glowcard{
+    position:relative;
+    transition:transform .4s var(--ease),box-shadow .4s var(--ease),
+      background .35s var(--ease),border-color .35s var(--ease),color .25s var(--ease);
+  }
+  .glowcard:hover{box-shadow:0 0 0 1px rgba(var(--accent-rgb),.34),0 20px 52px -22px rgba(var(--accent-rgb),.7)}
+  .glowcard .glow-veil{
+    position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    opacity:0;transition:opacity .35s var(--ease);
+    background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(var(--accent-rgb),.22),rgba(var(--accent-rgb),0) 60%);
+  }
+  .glowcard:hover .glow-veil{opacity:1}
+  @media (hover:none){.glowcard .glow-veil{display:none}}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:960px){
+    .wrap{width:min(100% - 36px,var(--maxw))}
+    .nav-links{display:none}
+    .nav-cta .login{display:none}
+    .burger{display:grid}
+    .mobile{max-height:calc(100vh - 64px);overflow-y:auto}
+    .hero{padding-top:120px}
+    .hero-grid,.split,.contact{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1;width:100%;max-width:460px;margin-inline:auto}
+    .features,.quotes{grid-template-columns:1fr}
+    .creators{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    .checks{grid-template-columns:1fr}
+    .head{margin-bottom:40px}
+    .head-row{align-items:flex-start}
+    .head-row .btn{width:100%}
+    .cta-band{text-align:left}
+  }
+  @media (max-width:640px){
+    .wrap{width:min(100% - 30px,var(--maxw))}
+    .section{padding:64px 0}
+    .hero{padding-top:104px}
+    .hero h1{font-size:clamp(2.6rem,13vw,3.6rem);margin:20px 0 18px}
+    .hero p.lead{font-size:1.02rem;margin-bottom:26px}
+    .hero-actions{gap:12px;margin-bottom:28px}
+    .hero-actions .btn{flex:1 1 100%}
+    .social{gap:12px}
+    .avatars img{width:36px;height:36px;margin-left:-13px}
+    .feature{padding:22px}
+    .feature .thumb{height:150px}
+    .quote{padding:22px}
+    .quote.is-active{transform:translate(12px,-6px) rotate(0deg) scale(1.01)}
+    .cta-inner{padding:34px 26px}
+    .contact-info img{aspect-ratio:16/11}
+    .info-row{padding:14px}
+    .field input,.field textarea{font-size:16px}
+    .form .btn{width:100%}
+    .foot-bottom{justify-content:center;text-align:center}
+    .blob{opacity:calc(var(--blob-op) * .6)}
+    .blob.b4,.blob.b5{display:none}
+    .streak{opacity:calc(var(--streak-op) * .55)}
+    .theme-menu{position:fixed;top:auto;left:12px;right:12px;bottom:12px;min-width:0;border-radius:18px;padding:9px}
+    .theme-opt{padding:12px 13px}
+  }
+  @media (max-width:520px){
+    .nav{height:64px}
+    .logo{font-size:1.16rem}
+    .logo .dot{width:24px;height:24px}
+    .creators{grid-template-columns:1fr;gap:14px}
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+    .float-card{display:none}
+    .cta-note{font-size:.8rem}
+    .socials a{width:42px;height:42px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .cs-item{clip-path:none!important;visibility:visible!important}
+  }
+</style>
+  <script>try{var _t=localStorage.getItem('kupp-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+  <span class="blob b5"></span>
+  <span class="streak s1"></span>
+  <span class="streak s2"></span>
+  <span class="streak s3"></span>
+  <span class="streak s4"></span>
+</div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="dot">K</span>KUPP</a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#creators">Discover</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="theme-picker">
+        <button class="theme-btn" id="themeBtn" aria-label="Choose theme" aria-haspopup="true" aria-expanded="false" title="Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.4-1.6 3.4-3.2 3.4H16a2.2 2.2 0 0 0-1.6 3.7c.4.5.6 1.1.6 1.7 0 1.4-1.2 2.2-3 2.2Z"/><circle cx="7.6" cy="11.6" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="7.6" r="1.3" fill="currentColor" stroke="none"/><circle cx="16.4" cy="11" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <div class="theme-menu" id="themeMenu" role="menu" aria-label="Themes">
+          <button class="theme-opt" data-theme="kupp" role="menuitem"><span class="sw sw-kupp"></span><span class="t"><b>Kupp</b><em>Black &amp; Purple</em></span></button>
+          <button class="theme-opt" data-theme="light" role="menuitem"><span class="sw sw-light"></span><span class="t"><b>Light</b><em>Bright &amp; airy</em></span></button>
+          <button class="theme-opt" data-theme="dark" role="menuitem"><span class="sw sw-dark"></span><span class="t"><b>Dark</b><em>Neutral slate</em></span></button>
+          <button class="theme-opt" data-theme="alte" role="menuitem"><span class="sw sw-alte"></span><span class="t"><b>Alté</b><em>White &amp; Cyan</em></span></button>
+          <button class="theme-opt" data-theme="gold" role="menuitem"><span class="sw sw-gold"></span><span class="t"><b>Kupp Gold</b><em>Black &amp; Gold</em></span></button>
+        </div>
+      </div>
+      <a class="login" href="https://kupp.fun/auth?mode=login">Log In</a>
+      <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Get Started</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile" id="mobile">
+    <div class="wrap">
+      <a href="#features">Features</a>
+      <a href="#creators">Discover</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero section">
+    <div class="glow a"></div>
+    <div class="glow b"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><span class="live"></span> Now live across Africa · 1,000+ users</span>
+        <h1>
+          <span class="grad">Connect.</span>
+          <span>Chat.</span>
+          <span class="grad">Gift.</span>
+        </h1>
+        <p class="lead">KUPP is the real-time platform where creators, models, and clients connect through live chat, audio calls, and meaningful exchanges.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Join KUPP
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#features">Explore features</a>
+        </div>
+        <div class="social">
+          <div class="avatars">
+            <img src="profile.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="profile2.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="users.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="feed.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="testimonial.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+          </div>
+          <div class="rating">
+            <div class="stars">★★★★★</div>
+            <div><b>4.9/5</b> from 2,400+ reviews</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-shot"><img src="hero.jpg" alt="KUPP live chat experience" decoding="async" fetchpriority="high" /></div>
+        <div class="float-card fc-1"><div class="t">Credits earned</div><div class="v">3,000+</div></div>
+        <div class="float-card fc-2"><div class="t">Live now</div><div class="v">243 online</div></div>
+        <div class="float-card fc-3"><div class="t">Gift sent</div><div class="v">✦ 120 credits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track">
+      <span>Real-Time Chat <b>★</b></span><span>Audio Calls <b>★</b></span><span>In-App Gifting <b>★</b></span>
+      <span>Verified Creators <b>★</b></span><span>Backdoor Market <b>★</b></span><span>1,000+ Users <b>★</b></span>
+      <span>Live Across Africa <b>★</b></span><span>Secure Wallet <b>★</b></span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="head cs-item" data-stream>
+        <span class="eyebrow">Platform Features</span>
+        <h2>Everything you need</h2>
+        <p>Every feature on KUPP is designed to make creator–client interactions seamless, safe, and deeply rewarding for everyone involved.</p>
+      </div>
+      <div class="features">
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="message.jpg" alt="Real-time chat" loading="lazy" decoding="async" /></div>
+          <span class="num">01</span>
+          <h3>Real-Time Chat</h3>
+          <p>1:1 text messaging with read receipts, typing indicators, and instant delivery. Every word lands in real time.</p>
+          <span class="tag">Messaging</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="wallet.jpg" alt="In-app gifting" loading="lazy" decoding="async" /></div>
+          <span class="num">02</span>
+          <h3>In-App Gifting</h3>
+          <p>Send credits as gifts and tips to creators you love. Instant, tracked, and meaningful.</p>
+          <span class="tag">Economy</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="payment.jpg" alt="Verified safety" loading="lazy" decoding="async" /></div>
+          <span class="num">03</span>
+          <h3>Verified Safety</h3>
+          <p>Age verification at signup, user verification badges, and admin moderation tools keep KUPP safe.</p>
+          <span class="tag">Trust &amp; Safety</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="backdoor.jpg" alt="Backdoor market" loading="lazy" decoding="async" /></div>
+          <span class="num">04</span>
+          <h3>Backdoor Market</h3>
+          <p>Book premium experiences and exclusive services from top creators through the Backdoor marketplace.</p>
+          <span class="tag">Marketplace</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / SAFETY -->
+  <section class="section" id="about">
+    <div class="wrap split">
+      <div class="cs-item" data-stream>
+        <span class="eyebrow">Trust &amp; Safety</span>
+        <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin:18px 0 16px">Built to keep everyone safe</h2>
+        <p style="color:var(--muted);font-size:1.05rem">From age verification at signup to moderation tools and anonymous mode, KUPP puts trust first — so connection feels human, not risky.</p>
+        <ul class="checks">
+          <li><span class="ico">✓</span> 18+ age verification at signup</li>
+          <li><span class="ico">✓</span> Report &amp; block in every chat</li>
+          <li><span class="ico">✓</span> Admin moderation dashboard</li>
+          <li><span class="ico">✓</span> Verified creator badges</li>
+          <li><span class="ico">✓</span> Email-verified accounts</li>
+          <li><span class="ico">✓</span> Anonymous mode hides your profile</li>
+        </ul>
+        <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Start for free
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="media cs-item" data-stream>
+        <img src="incognito.jpg" alt="Verified and anonymous mode" loading="lazy" decoding="async" />
+        <div class="media-badge"><div class="v">100%</div><div class="t">Verified creators</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS -->
+  <section class="section" id="creators">
+    <div class="wrap">
+      <div class="head-row cs-item" data-stream>
+        <div>
+          <span class="eyebrow">Featured Creators</span>
+          <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin-top:18px">Meet the talent</h2>
+        </div>
+        <a class="btn btn-ghost" href="https://kupp.fun/auth?mode=signup">View all creators</a>
+      </div>
+      <div class="creators">
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="profile.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Aria Voss</div><div class="role">Lifestyle Creator · Lagos</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="profile2.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Luna Reyes</div><div class="role">Art &amp; Music · Nairobi</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="users.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Zara Kim</div><div class="role">Talk &amp; Voice · Accra</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="next1.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Nia Ade</div><div class="role">Fitness · Cape Town</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="head cs-item" data-stream>
+        <span class="eyebrow">What People Say</span>
+        <h2>Loved across Africa</h2>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>I love how genz nigerians are making a difference</p>
+          <div class="who"><img src="testimonial.jpg" alt="Kosoko" loading="lazy" decoding="async" /><div><div class="n">Kosoko</div><div class="r">Lifestyle Creator · Lagos, Nigeria</div></div></div>
+        </blockquote>
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>The gifting system is pure genius. My fans love sending me gifts during our audio calls — it feels personal and the platform makes it effortless.</p>
+          <div class="who"><img src="testimonial2.jpg" alt="Tolu" loading="lazy" decoding="async" /><div><div class="n">Tolu</div><div class="r">Art &amp; Music Creator</div></div></div>
+        </blockquote>
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>I really like the fact that they took the best part of the best social media platforms and made it better...this is the type of innovation i like to see</p>
+          <div class="who"><img src="testimonial3.jpg" alt="Tolani" loading="lazy" decoding="async" /><div><div class="n">Tolani</div><div class="r">KUPP Member</div></div></div>
+        </blockquote>
+      </div>
+      <div class="review-dots" id="reviewDots" aria-label="Testimonials"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="join">
+    <div class="wrap">
+      <div class="cta-band cs-item" data-stream>
+        <img src="join.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        <div class="cta-inner">
+          <span class="eyebrow">Start Free Today</span>
+          <h2>Ready to join <span class="grad">KUPP</span>?</h2>
+          <p>Create your profile, get age-verified, and start connecting with creators and Kupps across Africa. It only takes a few minutes.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Create Free Account</a>
+            <a class="btn btn-ghost" href="https://kupp.fun/auth?mode=login">Log In</a>
+          </div>
+          <div class="cta-note">No credit card required · Age-verified &amp; moderated · Available across Africa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div class="cs-item" data-stream>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin:18px 0 16px">Let's talk</h2>
+        <p style="color:var(--muted);margin-bottom:30px">Have questions or feedback? Drop us a message and we'll get back to you within 24 hours.</p>
+        <form class="form" onsubmit="event.preventDefault(); this.reset(); this.querySelector('button').textContent='Message sent ✓';">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com" required /></div>
+          <div class="field"><label for="msg">Message</label><textarea id="msg" placeholder="How can we help?" required></textarea></div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info cs-item" data-stream>
+        <img src="coontact.jpg" alt="" aria-hidden="true" style="border-radius:var(--radius);aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line)" loading="lazy" decoding="async" />
+        <div class="info-row"><div class="ic">✉</div><div><div class="t">Email</div><div class="v"><a href="mailto:hello@kupp.fun">hello@kupp.fun</a></div></div></div>
+        <div class="info-row"><div class="ic">◎</div><div><div class="t">Office</div><div class="v">Lagos, Nigeria</div></div></div>
+        <div class="info-row"><div class="ic">☎</div><div><div class="t">Support</div><div class="v"><a href="mailto:help@kupp.fun">help@kupp.fun</a></div></div></div>
+        <div class="info-row"><div class="ic">⏱</div><div><div class="t">Response time</div><div class="v">Under 24 hours</div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot">
+        <a class="logo" href="#top"><span class="dot">K</span>KUPP</a>
+        <p>The real-time platform where creators, models, and clients connect through live chat, voice calls, and in-app gifting.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/kuppsocials" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/kuppofficial" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.2-9.3L1 2h7.2l4.9 6.5L18.9 2Zm-1.2 18h1.7L7.3 3.9H5.5L17.7 20Z"/></svg></a>
+          <a href="https://www.tiktok.com/@kupp.app" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.2 1.6 3.7 3.8 4v2.6c-1.3.1-2.6-.3-3.9-.9v6.4a5.4 5.4 0 1 1-5.4-5.4c.3 0 .6 0 .9.1v2.7a2.7 2.7 0 1 0 1.9 2.6V3H16Z"/></svg></a>
+          <a href="https://www.snapchat.com/add/kupp.app" aria-label="Snapchat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c2.5 0 4.3 1.9 4.3 4.4 0 .6-.1 1.2-.1 1.6.4.2.9.2 1.4.1.7-.1 1.3.4 1.2 1-.1.5-.7.8-1.5 1.1-.5.2-.6.4-.6.8.4 1.6 1.7 2.6 3 2.9.5.1.6.7.2 1-.7.6-1.7.3-2.6.5-.2.5-.3.9-.7 1-.5.2-1.3-.2-2.5-.2-1.5 0-2.2 1.5-4.1 1.5S8.2 18.2 6.7 18.2c-1.2 0-2 .4-2.5.2-.4-.1-.5-.5-.7-1-.9-.2-1.9.1-2.6-.5-.4-.3-.3-.9.2-1 1.3-.3 2.6-1.3 3-2.9 0-.4-.1-.6-.6-.8-.8-.3-1.4-.6-1.5-1.1-.1-.6.5-1.1 1.2-1 .5.1 1 .1 1.4-.1 0-.4-.1-1-.1-1.6C7.7 4.9 9.5 3 12 3Z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Platform</h4>
+        <a href="#creators">Discover Creators</a>
+        <a href="#features">Backdoor Market</a>
+        <a href="#features">Wallet</a>
+        <a href="#features">Audio Calls</a>
+      </div>
+      <div class="foot">
+        <h4>Company</h4>
+        <a href="#about">About KUPP</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="foot">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">18+ Verification</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> KUPP, Inc. All rights reserved.</span>
+      <span class="status"><span class="dot"></span> All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+  <script>  /* rAF-throttled scroll/resize dispatcher (shared by all scroll handlers) */
+  var scrollFns = [], scrollQueued = false;
+  function onScroll(fn) { scrollFns.push(fn); }
+  function runScroll() { scrollQueued = false; for (var i = 0; i < scrollFns.length; i++) scrollFns[i](); }
+  addEventListener('scroll', function () { if (!scrollQueued) { scrollQueued = true; requestAnimationFrame(runScroll); } }, { passive: true });
+  addEventListener('resize', function () { if (!scrollQueued) { scrollQueued = true; requestAnimationFrame(runScroll); } }, { passive: true });
+
+  /* stop all ambient CSS motion while the tab is not visible */
+  document.addEventListener('visibilitychange', function () {
+    document.documentElement.classList.toggle('pause-anim', document.hidden);
+  });
+
+  /* pause the marquee when it scrolls out of view */
+  (function () {
+    var marquee = document.querySelector('.marquee');
+    var track = marquee && marquee.querySelector('.track');
+    if (!track || !window.IntersectionObserver) return;
+    new IntersectionObserver(function (e) {
+      track.style.animationPlayState = e[0].isIntersecting ? 'running' : 'paused';
+    }, { threshold: 0 }).observe(marquee);
+  })();
+
+  const header = document.getElementById('header');
+  onScroll(function () { header.classList.toggle('scrolled', scrollY > 20); });
+
+  const burger = document.getElementById('burger');
+  const mobile = document.getElementById('mobile');
+  burger.addEventListener('click', () => mobile.classList.toggle('open'));
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.remove('open')));
+
+  /* content streaming: create on enter, destroy on leave */
+  (function () {
+    if (!window.IntersectionObserver) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-stream]'));
+    if (!items.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { items.forEach(function (el) { el.classList.add('cs-in'); }); return; }
+
+    var seq = {};
+    function group(el) { var n = el.parentElement; while (n && n.nodeType === 1) { if (n.id) return n.id; n = n.parentElement; } return 'page'; }
+    function order(el) { var g = group(el); if (!(g in seq)) seq[g] = 0; return seq[g]++; }
+    function reveal(el) { el.classList.remove('cs-hide'); el.classList.add('cs-in'); }
+    function hide(el) { el.classList.remove('cs-in'); el.classList.add('cs-hide'); }
+
+    items.forEach(function (el) { el.classList.add('cs-item'); el.style.setProperty('--d', order(el) * 70 + 'ms'); });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) reveal(e.target); else hide(e.target); });
+    }, { threshold: 0, rootMargin: '0px' });
+
+    var vh = window.innerHeight;
+    items.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh && r.bottom > 0) reveal(el); else hide(el);
+      io.observe(el);
+    });
+  })();
+
+  /* testimonial deck slideshow */
+  (function () {
+    var quotes = Array.prototype.slice.call(document.querySelectorAll('#reviews .quote'));
+    if (!quotes.length) return;
+    var dots = document.getElementById('reviewDots');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cur = 0, timer = null;
+
+    var hover = window.matchMedia && window.matchMedia('(hover:hover)').matches;
+    quotes.forEach(function (q, i) {
+      q.setAttribute('tabindex', '0');
+      q.setAttribute('role', 'button');
+      q.setAttribute('aria-label', 'Testimonial ' + (i + 1) + ' of ' + quotes.length);
+      q.addEventListener('click', function () { go(i); restart(); });
+      q.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(i); restart(); } });
+      if (hover) q.addEventListener('mouseenter', function () { go(i); });
+      if (dots) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+        b.addEventListener('click', function () { go(i); restart(); });
+        dots.appendChild(b);
+      }
+    });
+
+    function go(i) {
+      cur = (i + quotes.length) % quotes.length;
+      quotes.forEach(function (q, k) {
+        q.classList.toggle('is-active', k === cur);
+        if (dots && dots.children[k]) dots.children[k].classList.toggle('on', k === cur);
+      });
+    }
+    function stop() { if (timer) clearInterval(timer); timer = null; }
+    function start() { if (reduce) return; stop(); timer = setInterval(function () { go(cur + 1); }, 5000); }
+    function restart() { start(); }
+
+    go(0); start();
+    var box = document.getElementById('reviews');
+    if (box) { box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', start); }
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  })();
+
+  /* nav active tint on scroll */
+  (function () {
+    var ids = ['features', 'about', 'creators', 'contact'];
+    var secs = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"], .mobile a[href^="#"]'));
+    if (!secs.length || !links.length) return;
+    function update() {
+      var curId = '';
+      secs.forEach(function (s) { if (s.getBoundingClientRect().top <= 140) curId = s.id; });
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) curId = 'contact';
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + curId); });
+    }
+    onScroll(update);
+    update();
+  })();
+
+  const track = document.getElementById('track');
+  track.innerHTML += track.innerHTML;
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- theme toggle ---------- */
+  (function () {
+    var THEME_BG = { kupp: '#08080d', light: '#f5f5fa', dark: '#0b0c0f', alte: '#f7feff', gold: '#050506' };
+    var btn = document.getElementById('themeBtn');
+    var menu = document.getElementById('themeMenu');
+    if (!btn || !menu) return;
+    var meta = document.querySelector('meta[name="theme-color"]');
+
+    function apply(t) {
+      if (!THEME_BG[t]) t = 'kupp';
+      document.documentElement.setAttribute('data-theme', t);
+      try { localStorage.setItem('kupp-theme', t); } catch (e) {}
+      if (meta) meta.setAttribute('content', THEME_BG[t]);
+      menu.querySelectorAll('.theme-opt').forEach(function (o) {
+        o.classList.toggle('active', o.dataset.theme === t);
+        o.setAttribute('aria-checked', o.dataset.theme === t ? 'true' : 'false');
+      });
+    }
+    function close() { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+
+    var saved = 'kupp';
+    try { saved = localStorage.getItem('kupp-theme') || 'kupp'; } catch (e) {}
+    apply(saved);
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      var opt = e.target.closest('.theme-opt');
+      if (!opt) return;
+      apply(opt.dataset.theme);
+      close();
+    });
+    document.addEventListener('click', function (e) { if (!menu.contains(e.target) && e.target !== btn) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>
+</body>
+</html>

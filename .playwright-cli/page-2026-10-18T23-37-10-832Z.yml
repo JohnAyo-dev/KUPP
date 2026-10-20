@@ -1,0 +1,129 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "K KUPP" [ref=e4] [cursor=pointer]:
+        - /url: "#top"
+        - generic [ref=e5]: K
+        - text: KUPP
+      - navigation [ref=e6]:
+        - link "Features" [ref=e7] [cursor=pointer]:
+          - /url: "#features"
+        - link "Discover" [ref=e8] [cursor=pointer]:
+          - /url: "#creators"
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e11]:
+        - button "Choose theme" [ref=e13] [cursor=pointer]
+        - link "Log In" [ref=e19] [cursor=pointer]:
+          - /url: https://kupp.fun/auth?mode=login
+        - link "Get Started" [ref=e20] [cursor=pointer]:
+          - /url: https://kupp.fun/auth?mode=signup
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: Now live across Africa · 1,000+ users
+        - heading "Connect. Chat. Gift." [level=1] [ref=e27]:
+          - generic [ref=e28]: Connect.
+          - generic [ref=e29]: Chat.
+          - generic [ref=e30]: Gift.
+        - paragraph [ref=e31]: KUPP is the real-time platform where creators, models, and clients connect through live chat, audio calls, and meaningful exchanges.
+        - generic [ref=e32]:
+          - link "Join KUPP" [ref=e33] [cursor=pointer]:
+            - /url: https://kupp.fun/auth?mode=signup
+          - link "Explore features" [ref=e36] [cursor=pointer]:
+            - /url: "#features"
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - img "KUPP member" [ref=e39]
+            - img "KUPP member" [ref=e40]
+            - img "KUPP member" [ref=e41]
+            - img "KUPP member" [ref=e42]
+            - img "KUPP member" [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: ★★★★★
+            - generic [ref=e46]: 4.9/5 from 2,400+ reviews
+      - generic [ref=e47]:
+        - img "KUPP live chat experience" [ref=e49]
+        - generic [ref=e50]:
+          - generic [ref=e51]: Credits earned
+          - generic [ref=e52]: 3,000+
+        - generic [ref=e53]:
+          - generic [ref=e54]: Live now
+          - generic [ref=e55]: 243 online
+        - generic [ref=e56]:
+          - generic [ref=e57]: Gift sent
+          - generic [ref=e58]: ✦ 120 credits
+    - generic [ref=e60]:
+      - generic [ref=e61]: Real-Time Chat ★
+      - generic [ref=e62]: Audio Calls ★
+      - generic [ref=e63]: In-App Gifting ★
+      - generic [ref=e64]: Verified Creators ★
+      - generic [ref=e65]: Backdoor Market ★
+      - generic [ref=e66]: 1,000+ Users ★
+      - generic [ref=e67]: Live Across Africa ★
+      - generic [ref=e68]: Secure Wallet ★
+      - generic [ref=e69]: Real-Time Chat ★
+      - generic [ref=e70]: Audio Calls ★
+      - generic [ref=e71]: In-App Gifting ★
+      - generic [ref=e72]: Verified Creators ★
+      - generic [ref=e73]: Backdoor Market ★
+      - generic [ref=e74]: 1,000+ Users ★
+      - generic [ref=e75]: Live Across Africa ★
+      - generic [ref=e76]: Secure Wallet ★
+    - generic "Testimonials" [ref=e88]:
+      - button "Show testimonial 1" [ref=e89] [cursor=pointer]
+      - button "Show testimonial 2" [ref=e90] [cursor=pointer]
+      - button "Show testimonial 3" [ref=e91] [cursor=pointer]
+  - contentinfo [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]:
+          - link "K KUPP" [ref=e100] [cursor=pointer]:
+            - /url: "#top"
+            - generic [ref=e101]: K
+            - text: KUPP
+          - paragraph [ref=e102]: The real-time platform where creators, models, and clients connect through live chat, voice calls, and in-app gifting.
+          - generic [ref=e103]:
+            - link "Instagram" [ref=e104] [cursor=pointer]:
+              - /url: https://www.instagram.com/kuppsocials
+            - link "X" [ref=e109] [cursor=pointer]:
+              - /url: https://x.com/kuppofficial
+            - link "TikTok" [ref=e112] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@kupp.app
+            - link "Snapchat" [ref=e115] [cursor=pointer]:
+              - /url: https://www.snapchat.com/add/kupp.app
+        - generic [ref=e118]:
+          - heading "Platform" [level=4] [ref=e119]
+          - link "Discover Creators" [ref=e120] [cursor=pointer]:
+            - /url: "#creators"
+          - link "Backdoor Market" [ref=e121] [cursor=pointer]:
+            - /url: "#features"
+          - link "Wallet" [ref=e122] [cursor=pointer]:
+            - /url: "#features"
+          - link "Audio Calls" [ref=e123] [cursor=pointer]:
+            - /url: "#features"
+        - generic [ref=e124]:
+          - heading "Company" [level=4] [ref=e125]
+          - link "About KUPP" [ref=e126] [cursor=pointer]:
+            - /url: "#about"
+          - link "Careers" [ref=e127] [cursor=pointer]:
+            - /url: "#"
+          - link "Press" [ref=e128] [cursor=pointer]:
+            - /url: "#"
+          - link "Blog" [ref=e129] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e130]:
+          - heading "Legal" [level=4] [ref=e131]
+          - link "Privacy Policy" [ref=e132] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e133] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookie Policy" [ref=e134] [cursor=pointer]:
+            - /url: "#"
+          - link "18+ Verification" [ref=e135] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e136]:
+        - generic [ref=e137]: © 2026 KUPP, Inc. All rights reserved.
+        - generic [ref=e138]: All systems operational

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#08080d" />
+<title>KUPP — Connect. Chat. Gift.</title>
+<meta name="description" content="KUPP is the real-time platform where creators, models, and clients connect through live chat, audio calls, and meaningful exchanges. Live across Africa." />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>try{var _t=localStorage.getItem('kupp-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
+</head>
+<body>
+
+<div class="bg-fx" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+  <span class="blob b4"></span>
+  <span class="blob b5"></span>
+  <span class="streak s1"></span>
+  <span class="streak s2"></span>
+  <span class="streak s3"></span>
+  <span class="streak s4"></span>
+</div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="dot">K</span>KUPP</a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#creators">Discover</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="theme-picker">
+        <button class="theme-btn" id="themeBtn" aria-label="Choose theme" aria-haspopup="true" aria-expanded="false" title="Theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.4-1.6 3.4-3.2 3.4H16a2.2 2.2 0 0 0-1.6 3.7c.4.5.6 1.1.6 1.7 0 1.4-1.2 2.2-3 2.2Z"/><circle cx="7.6" cy="11.6" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="7.6" r="1.3" fill="currentColor" stroke="none"/><circle cx="16.4" cy="11" r="1.3" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <div class="theme-menu" id="themeMenu" role="menu" aria-label="Themes">
+          <button class="theme-opt" data-theme="kupp" role="menuitem"><span class="sw sw-kupp"></span><span class="t"><b>Kupp</b><em>Black &amp; Purple</em></span></button>
+          <button class="theme-opt" data-theme="light" role="menuitem"><span class="sw sw-light"></span><span class="t"><b>Light</b><em>Bright &amp; airy</em></span></button>
+          <button class="theme-opt" data-theme="dark" role="menuitem"><span class="sw sw-dark"></span><span class="t"><b>Dark</b><em>Neutral slate</em></span></button>
+          <button class="theme-opt" data-theme="alte" role="menuitem"><span class="sw sw-alte"></span><span class="t"><b>Alté</b><em>White &amp; Cyan</em></span></button>
+          <button class="theme-opt" data-theme="gold" role="menuitem"><span class="sw sw-gold"></span><span class="t"><b>Kupp Gold</b><em>Black &amp; Gold</em></span></button>
+        </div>
+      </div>
+      <a class="login" href="https://kupp.fun/auth?mode=login">Log In</a>
+      <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Get Started</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile" id="mobile">
+    <div class="wrap">
+      <a href="#features">Features</a>
+      <a href="#creators">Discover</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero section">
+    <div class="glow a"></div>
+    <div class="glow b"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><span class="live"></span> Now live across Africa · 1,000+ users</span>
+        <h1>
+          <span class="grad">Connect.</span>
+          <span>Chat.</span>
+          <span class="grad">Gift.</span>
+        </h1>
+        <p class="lead">KUPP is the real-time platform where creators, models, and clients connect through live chat, audio calls, and meaningful exchanges.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Join KUPP
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#features">Explore features</a>
+        </div>
+        <div class="social">
+          <div class="avatars">
+            <img src="profile.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="profile2.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="users.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="feed.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+            <img src="testimonial.jpg" alt="KUPP member" loading="lazy" decoding="async" />
+          </div>
+          <div class="rating">
+            <div class="stars">★★★★★</div>
+            <div><b>4.9/5</b> from 2,400+ reviews</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-shot"><img src="hero.jpg" alt="KUPP live chat experience" decoding="async" fetchpriority="high" /></div>
+        <div class="float-card fc-1"><div class="t">Credits earned</div><div class="v">3,000+</div></div>
+        <div class="float-card fc-2"><div class="t">Live now</div><div class="v">243 online</div></div>
+        <div class="float-card fc-3"><div class="t">Gift sent</div><div class="v">✦ 120 credits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track">
+      <span>Real-Time Chat <b>★</b></span><span>Audio Calls <b>★</b></span><span>In-App Gifting <b>★</b></span>
+      <span>Verified Creators <b>★</b></span><span>Backdoor Market <b>★</b></span><span>1,000+ Users <b>★</b></span>
+      <span>Live Across Africa <b>★</b></span><span>Secure Wallet <b>★</b></span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="head cs-item" data-stream>
+        <span class="eyebrow">Platform Features</span>
+        <h2>Everything you need</h2>
+        <p>Every feature on KUPP is designed to make creator–client interactions seamless, safe, and deeply rewarding for everyone involved.</p>
+      </div>
+      <div class="features">
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="message.jpg" alt="Real-time chat" loading="lazy" decoding="async" /></div>
+          <span class="num">01</span>
+          <h3>Real-Time Chat</h3>
+          <p>1:1 text messaging with read receipts, typing indicators, and instant delivery. Every word lands in real time.</p>
+          <span class="tag">Messaging</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="wallet.jpg" alt="In-app gifting" loading="lazy" decoding="async" /></div>
+          <span class="num">02</span>
+          <h3>In-App Gifting</h3>
+          <p>Send credits as gifts and tips to creators you love. Instant, tracked, and meaningful.</p>
+          <span class="tag">Economy</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="payment.jpg" alt="Verified safety" loading="lazy" decoding="async" /></div>
+          <span class="num">03</span>
+          <h3>Verified Safety</h3>
+          <p>Age verification at signup, user verification badges, and admin moderation tools keep KUPP safe.</p>
+          <span class="tag">Trust &amp; Safety</span>
+        </article>
+        <article class="feature cs-item" data-stream>
+          <div class="thumb"><img src="backdoor.jpg" alt="Backdoor market" loading="lazy" decoding="async" /></div>
+          <span class="num">04</span>
+          <h3>Backdoor Market</h3>
+          <p>Book premium experiences and exclusive services from top creators through the Backdoor marketplace.</p>
+          <span class="tag">Marketplace</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / SAFETY -->
+  <section class="section" id="about">
+    <div class="wrap split">
+      <div class="cs-item" data-stream>
+        <span class="eyebrow">Trust &amp; Safety</span>
+        <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin:18px 0 16px">Built to keep everyone safe</h2>
+        <p style="color:var(--muted);font-size:1.05rem">From age verification at signup to moderation tools and anonymous mode, KUPP puts trust first — so connection feels human, not risky.</p>
+        <ul class="checks">
+          <li><span class="ico">✓</span> 18+ age verification at signup</li>
+          <li><span class="ico">✓</span> Report &amp; block in every chat</li>
+          <li><span class="ico">✓</span> Admin moderation dashboard</li>
+          <li><span class="ico">✓</span> Verified creator badges</li>
+          <li><span class="ico">✓</span> Email-verified accounts</li>
+          <li><span class="ico">✓</span> Anonymous mode hides your profile</li>
+        </ul>
+        <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Start for free
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="media cs-item" data-stream>
+        <img src="incognito.jpg" alt="Verified and anonymous mode" loading="lazy" decoding="async" />
+        <div class="media-badge"><div class="v">100%</div><div class="t">Verified creators</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATORS -->
+  <section class="section" id="creators">
+    <div class="wrap">
+      <div class="head-row cs-item" data-stream>
+        <div>
+          <span class="eyebrow">Featured Creators</span>
+          <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin-top:18px">Meet the talent</h2>
+        </div>
+        <a class="btn btn-ghost" href="https://kupp.fun/auth?mode=signup">View all creators</a>
+      </div>
+      <div class="creators">
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="profile.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Aria Voss</div><div class="role">Lifestyle Creator · Lagos</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="profile2.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Luna Reyes</div><div class="role">Art &amp; Music · Nairobi</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="users.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Zara Kim</div><div class="role">Talk &amp; Voice · Accra</div></div>
+        </article>
+        <article class="creator cs-item" data-stream>
+          <span class="badge"><b>✓</b> Verified</span>
+          <img src="next1.jpg" alt="Creator profile" loading="lazy" decoding="async" />
+          <div class="info"><div class="name">Nia Ade</div><div class="role">Fitness · Cape Town</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="head cs-item" data-stream>
+        <span class="eyebrow">What People Say</span>
+        <h2>Loved across Africa</h2>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>I love how genz nigerians are making a difference</p>
+          <div class="who"><img src="testimonial.jpg" alt="Kosoko" loading="lazy" decoding="async" /><div><div class="n">Kosoko</div><div class="r">Lifestyle Creator · Lagos, Nigeria</div></div></div>
+        </blockquote>
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>The gifting system is pure genius. My fans love sending me gifts during our audio calls — it feels personal and the platform makes it effortless.</p>
+          <div class="who"><img src="testimonial2.jpg" alt="Tolu" loading="lazy" decoding="async" /><div><div class="n">Tolu</div><div class="r">Art &amp; Music Creator</div></div></div>
+        </blockquote>
+        <blockquote class="quote cs-item" data-stream>
+          <div class="mark">“</div>
+          <p>I really like the fact that they took the best part of the best social media platforms and made it better...this is the type of innovation i like to see</p>
+          <div class="who"><img src="testimonial3.jpg" alt="Tolani" loading="lazy" decoding="async" /><div><div class="n">Tolani</div><div class="r">KUPP Member</div></div></div>
+        </blockquote>
+      </div>
+      <div class="review-dots" id="reviewDots" aria-label="Testimonials"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="join">
+    <div class="wrap">
+      <div class="cta-band cs-item" data-stream>
+        <img src="join.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        <div class="cta-inner">
+          <span class="eyebrow">Start Free Today</span>
+          <h2>Ready to join <span class="grad">KUPP</span>?</h2>
+          <p>Create your profile, get age-verified, and start connecting with creators and Kupps across Africa. It only takes a few minutes.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://kupp.fun/auth?mode=signup">Create Free Account</a>
+            <a class="btn btn-ghost" href="https://kupp.fun/auth?mode=login">Log In</a>
+          </div>
+          <div class="cta-note">No credit card required · Age-verified &amp; moderated · Available across Africa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div class="cs-item" data-stream>
+        <span class="eyebrow">Get In Touch</span>
+        <h2 style="font-size:clamp(2rem,4.6vw,3rem);margin:18px 0 16px">Let's talk</h2>
+        <p style="color:var(--muted);margin-bottom:30px">Have questions or feedback? Drop us a message and we'll get back to you within 24 hours.</p>
+        <form class="form" onsubmit="event.preventDefault(); this.reset(); this.querySelector('button').textContent='Message sent ✓';">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com" required /></div>
+          <div class="field"><label for="msg">Message</label><textarea id="msg" placeholder="How can we help?" required></textarea></div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info cs-item" data-stream>
+        <img src="coontact.jpg" alt="" aria-hidden="true" style="border-radius:var(--radius);aspect-ratio:16/10;object-fit:cover;border:1px solid var(--line)" loading="lazy" decoding="async" />
+        <div class="info-row"><div class="ic">✉</div><div><div class="t">Email</div><div class="v"><a href="mailto:hello@kupp.fun">hello@kupp.fun</a></div></div></div>
+        <div class="info-row"><div class="ic">◎</div><div><div class="t">Office</div><div class="v">Lagos, Nigeria</div></div></div>
+        <div class="info-row"><div class="ic">☎</div><div><div class="t">Support</div><div class="v"><a href="mailto:help@kupp.fun">help@kupp.fun</a></div></div></div>
+        <div class="info-row"><div class="ic">⏱</div><div><div class="t">Response time</div><div class="v">Under 24 hours</div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot">
+        <a class="logo" href="#top"><span class="dot">K</span>KUPP</a>
+        <p>The real-time platform where creators, models, and clients connect through live chat, voice calls, and in-app gifting.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/kuppsocials" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://x.com/kuppofficial" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7l-5.5-7.2L4.5 22H1.4l8.2-9.3L1 2h7.2l4.9 6.5L18.9 2Zm-1.2 18h1.7L7.3 3.9H5.5L17.7 20Z"/></svg></a>
+          <a href="https://www.tiktok.com/@kupp.app" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.2 1.6 3.7 3.8 4v2.6c-1.3.1-2.6-.3-3.9-.9v6.4a5.4 5.4 0 1 1-5.4-5.4c.3 0 .6 0 .9.1v2.7a2.7 2.7 0 1 0 1.9 2.6V3H16Z"/></svg></a>
+          <a href="https://www.snapchat.com/add/kupp.app" aria-label="Snapchat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c2.5 0 4.3 1.9 4.3 4.4 0 .6-.1 1.2-.1 1.6.4.2.9.2 1.4.1.7-.1 1.3.4 1.2 1-.1.5-.7.8-1.5 1.1-.5.2-.6.4-.6.8.4 1.6 1.7 2.6 3 2.9.5.1.6.7.2 1-.7.6-1.7.3-2.6.5-.2.5-.3.9-.7 1-.5.2-1.3-.2-2.5-.2-1.5 0-2.2 1.5-4.1 1.5S8.2 18.2 6.7 18.2c-1.2 0-2 .4-2.5.2-.4-.1-.5-.5-.7-1-.9-.2-1.9.1-2.6-.5-.4-.3-.3-.9.2-1 1.3-.3 2.6-1.3 3-2.9 0-.4-.1-.6-.6-.8-.8-.3-1.4-.6-1.5-1.1-.1-.6.5-1.1 1.2-1 .5.1 1 .1 1.4-.1 0-.4-.1-1-.1-1.6C7.7 4.9 9.5 3 12 3Z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot">
+        <h4>Platform</h4>
+        <a href="#creators">Discover Creators</a>
+        <a href="#features">Backdoor Market</a>
+        <a href="#features">Wallet</a>
+        <a href="#features">Audio Calls</a>
+      </div>
+      <div class="foot">
+        <h4>Company</h4>
+        <a href="#about">About KUPP</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="foot">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">18+ Verification</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> KUPP, Inc. All rights reserved.</span>
+      <span class="status"><span class="dot"></span> All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

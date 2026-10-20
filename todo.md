@@ -1,0 +1,1 @@
+1. Add real talent images
